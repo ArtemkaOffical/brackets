@@ -5,7 +5,7 @@ module.exports = function check(str, bracketsConfig) {
       {
           if(str[i] === bracketsConfig[j][0] && str[i+1] === bracketsConfig[j][1])
           {
-              str.splice(i,2);
+              str.slice(i,2);
               i = 0;
           }
       }
