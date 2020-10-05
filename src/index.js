@@ -1,16 +1,16 @@
 module.exports = function check(str, bracketsConfig) {
     
-	let newstr = Array.from(str);
+	let strArr = Array.from(str);
 
-	for (i = 0; i< newstr.length; i++) {
-		for (j = 0; j < bracketsConfig.length; j++) {
-			if (newstr[j] === bracketsConfig[j][0] && newstr[i + 1] === bracketsConfig[j][1]) {
-				newstr.splice(i, 2);
-				i -= 2;
+	for (var el = 0; el < strArr.length; el++) {
+		for (var i = 0; i < bracketsConfig.length; i++) {
+			if (strArr[el] === bracketsConfig[i][0] && strArr[el + 1] === bracketsConfig[i][1]) {
+				strArr.splice(el, 2);
+				el -= 2;
 			}
 		}
 	}
 
-	return newstr.length === 0?true:false;
+	return strArr.length === 0;
     
 }
